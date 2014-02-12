@@ -1,9 +1,138 @@
 
-.date{
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal; 
-	font-size: 12px; 
-	line-height: normal; 
-	font-family: sans-serif;
+body {
+	color: #767676;
+	background: #f1f2f7;
+	font-family: 'Open Sans',sans-serif;
+	padding: 0;
+	margin: 0;
+	font-size: 13px;
 }
+
+body,html{
+	height: 100%;
+}
+.red{
+	color:#e67a77;
+}
+.blue{
+	color:#79d1cf;
+}
+.wrapper{
+	min-height: 100%;
+	margin-top: 30px;
+}
+.graph-container{
+	background: white;
+	padding: 20px;
+	width: 800px;
+	/*margin: 0 auto;*/
+	margin-left: 50px;
+	margin-top: 20px;
+	float: left;
+}
+
+.panel-header{
+	border-color: #eff2f7;
+	font-size: 13px;
+	font-weight: 400;
+	background: #fafafa;
+	text-transform: uppercase;
+	padding: 15px;
+}
+
+.player.icon-circle:before {
+	margin-right: 10px;
+	color:#e67a77;
+}
+.player.icon-circle:last-child:before {
+	color:#79d1cf;
+}
+
+.player{
+	float:right; 
+	margin-left: 10px;
+	color:inherit;
+}
+
+.nav-container{
+	width: 800px;
+	/*margin: 0 auto;*/
+	margin-left: 50px;
+}
+
+.details-container{
+	float:left;
+	width: 250px;
+	background: white;
+	padding: 20px;
+	margin-top: 20px;
+	margin-left: 30px;
+}
+
+.title-details{
+	font-size: 18px;
+	font-weight: 400;
+}
+
+.btn-sm {
+	padding: 5px 10px;
+	font-size: 12px;
+	line-height: 1.5;
+	border-radius: 0;
+}
+
+/*SPINNER*/
+
+.spinner-container {
+  text-align: center;
+
+  padding:35px 0 20px; }
+
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-top-color: transparent;
+  border-radius: 100%;
+  -webkit-animation: spin 1s infinite linear;
+  -moz-animation: spin 1s infinite linear;
+  -ms-animation: spin 1s infinite linear;
+  -o-animation: spin 1s infinite linear;
+  animation: spin 1s infinite linear; }
+  .spinner:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -4px;
+    left: 1px;
+    border: 4px solid transparent;
+    border-bottom-color: rgba(0, 0, 0, 0.5);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg); }
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg); } }
+
+@-moz-keyframes spin {
+  to {
+    -moz-transform: rotate(360deg); } }
+
+@-ms-keyframes spin {
+  to {
+    -ms-transform: rotate(360deg); } }
+
+@-o-keyframes spin {
+  to {
+    -o-transform: rotate(360deg); } }
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg); } }

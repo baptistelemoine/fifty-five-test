@@ -1,7 +1,26 @@
-
-  <svg ng-attr-height="{{graphHeight}}" ng-attr-width="{{graphWidth}}" xmlns="http://www.w3.org/2000/svg" style="overflow:hidden">
-  	<rect ng-repeat="item in items" ng-click="onItemClick(item, $event)" ng-attr-x="{{(chartWidth*2+gap) * $index}}" ng-attr-y="{{graphHeight - item.john/divider - 20}}" ng-attr-width="{{chartWidth}}" ng-attr-height="{{item.john/divider}}" r="0" rx="0" ry="0" fill="#e67a77" stroke="#000" stroke-width="0"></rect>
-  	<a xmlns="http://www.w3.org/2000/svg" id="anchor" xlink:href="/" xmlns:xlink="http://www.w3.org/1999/xlink">
-  	<rect ng-repeat="item in items" ng-click="onItemClick(item, $event)" ng-attr-x="{{((chartWidth*2+gap) * $index)+chartWidth}}" ng-attr-y="{{graphHeight - item.mike/divider -20}}" ng-attr-width="{{chartWidth}}" ng-attr-height="{{item.mike/divider}}" r="0" rx="0" ry="0" fill="#79d1cf" stroke="#000" stroke-width="0"></a></rect>
-  	<text ng-repeat="item in items" x="{{(chartWidth*2+gap) * $index + chartWidth}}" y="{{graphHeight}}" text-anchor="middle" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-size: 8px; line-height: normal; font-family: sans-serif;" font-size="8px" font-family="sans-serif" font-weight="normal"><tspan ng-attr-dy="{{$index%2 * -10}}">{{item.date | dateFormat}}</tspan></text>
-  </svg>
+<div class="nav-container">
+		<a ng-href="#/weekly"><button type="button" ng-class="{true:'disabled', false:''}[type==='weekly']" class="btn btn-primary btn-sm">Weekly-view</button></a>
+		<a ng-href="#/daily"><button type="button" ng-class="{true:'disabled', false:''}[type==='daily']" class="btn btn-primary btn-sm">Daily-view</button></a>
+</div>
+<div class="graph-container">
+	<div class="spinner-container" ng-hide="items" style="height:80px;">
+   		<span class="spinner"></span>
+	</div>
+	<div class="panel-header" ng-show="items">
+			<span>{{settings.label}}</span>
+			<span ng-repeat="player in settings.dictionary.dictionary.players" class="icon-circle player">{{player}}</span>
+	</div>
+	<svg ng-attr-height="{{graphHeight}}" ng-attr-width="{{graphWidth}}" xmlns="http://www.w3.org/2000/svg" style="overflow:hidden;margin-left:{{margin}}">
+		  	<rect ng-repeat="item in items" ng-click="onItemClick(item, $event)" ng-attr-x="{{(chartWidth*2+gap) * $index}}" ng-attr-y="{{graphHeight - item.john/divider - 20}}" ng-attr-width="{{chartWidth}}" ng-attr-height="{{item.john/divider}}" r="0" rx="0" ry="0" fill="#e67a77" stroke="#000" stroke-width="0" style="cursor:pointer;"></rect>
+		  	<rect ng-repeat="item in items" ng-click="onItemClick(item, $event)" ng-attr-x="{{((chartWidth*2+gap) * $index)+chartWidth}}" ng-attr-y="{{graphHeight - item.mike/divider -20}}" ng-attr-width="{{chartWidth}}" ng-attr-height="{{item.mike/divider}}" r="0" rx="0" ry="0" fill="#79d1cf" stroke="#000" stroke-width="0" style="cursor:pointer;"></rect>
+		  	<text ng-repeat="item in items" x="{{(chartWidth*2+gap) * $index + chartWidth}}" y="{{graphHeight}}" text-anchor="middle" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-size: 8px; line-height: normal; font-family: sans-serif;" font-size="8px" font-family="sans-serif" font-weight="normal"><tspan ng-attr-dy="{{$index%2 * -10}}">{{item.date | dateFormat}}</tspan></text>
+	</svg>
+</div>
+<div class="details-container" ng-if="detail" ng-model="detail">
+	<p class="title-details">Details</p>
+	<hr>
+	<p class="player-detail">John scored <span class="red">{{detail.john || 0}}</span> points</p>
+	<p class="player-detail">Mike scored <span class="blue">{{detail.mike || 0}}</span> points</p>
+	<p class="date-detail" ng-show="type==='weekly'">Week started {{detail.date | dateFormat}}</p>
+	<p class="date-detail" ng-show="type==='daily'">Day : {{detail.date | dateFormat}}</p>
+</div>
