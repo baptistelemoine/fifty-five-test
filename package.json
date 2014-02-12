@@ -1,0 +1,22 @@
+{
+  "name": "fifty-five-test",
+  "version": "0.0.0",
+  "description": "App that display players scores",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baptistelemoine/fifty-five-test"
+  },
+  "author": "baptiste",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baptistelemoine/fifty-five-test/issues"
+  },
+  "homepage": "https://github.com/baptistelemoine/fifty-five-test",
+  "dependencies": {
+    "express": "~3.4.8"
+  }
+}
