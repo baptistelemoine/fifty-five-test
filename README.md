@@ -7,6 +7,5 @@ Install
 ===============
 
 * run npm install
-* run bower install
 * node server.js
 * localhost:3000
